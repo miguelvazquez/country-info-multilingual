@@ -1,0 +1,15 @@
+Countries
+
+https://github.com/peterkahl/countries
+
+
+
+Translates 2-letter country ISO code to country name.
+
+This database consists of one table which allows for translation of
+2-letter country ISO code to country name in English (en_GB) and Chinese
+(zh_CN, zh_TW) languages, coordinates (lat, lon).
+
+This database is based in part on Per Gustafsson's ip2nation
+(ip2nation.com). This table is fully compatible with the ip2nation
+database.
