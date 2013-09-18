@@ -3,6 +3,7 @@ Countries
 https://github.com/peterkahl/countries
 
 
+這個資料庫能夠把兩個字母的國家代碼，轉換成繁體及簡體中文的國家名稱。
 
 Translates 2-letter country ISO code to country name.
 
