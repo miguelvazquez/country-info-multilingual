@@ -37,8 +37,9 @@ $country_code = 'de';
 $sql = "SELECT * FROM `countries` WHERE `code`='".$country_code."' LIMIT 0,1";
 $result = $mysqli->query($sql);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-	if ($lang_code == 'zh_HK') $lang_code = 'zh_TW';
-	$name = $row['country_'.$clang];
+	if     ($lang_code == 'zh_HK') $lang_code = 'zh_TW';
+	elseif ($lang_code == 'en_US') $lang_code = 'en_GB';
+	$name = $row['country_'.$lang_code];
 }
 
 echo $name; // 德國
