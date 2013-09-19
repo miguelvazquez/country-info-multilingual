@@ -1,6 +1,7 @@
 --
 -- Countries
--- Copyright (c) 2012 Peter Kahl. All rights reserved.
+-- Updated: 2013-09-19 at 11:39 GMT
+-- Copyright (c) 2012-2013 Peter Kahl. All rights reserved.
 -- Use of this source code is governed by a GNU General Public License
 -- that can be found in the LICENSE file.
 --
@@ -16,8 +17,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 
 CREATE TABLE IF NOT EXISTS `countries` (
-  `code` varchar(4) NOT NULL,
-  `iso_country` varchar(255) NOT NULL,
+  `code` varchar(4) NOT NULL DEFAULT '',
+  `iso_country` varchar(255) NOT NULL DEFAULT '',
   `country_ar_SA` varchar(255) NOT NULL,
   `country_cs_CZ` varchar(255) NOT NULL,
   `country_de_DE` varchar(255) NOT NULL,
@@ -131,7 +132,7 @@ INSERT INTO `countries` (`code`, `iso_country`, `country_ar_SA`, `country_cs_CZ`
 ('gu', 'Guam', 'جوام', 'Guam', 'Guam', 'Guam', 'Guam', 'Guam', 'グアム', 'Guam', 'Guam', 'Гуам', 'Guam', '關島', '关岛', 13.28, 144.47),
 ('gw', 'Guinea-Bissau', 'غينيا بيساو', 'Guinea-Bissau', 'Guinea-Bissau', 'Guinea-Bissau', 'Guinée-Bissau', 'Guinee-Bissau', 'ギニアビサウ', 'Guiné-Bissau', 'Guinea-Bissau', 'Гвинея-Биссау', 'Guinea-Bissau', '幾內亞比紹', '几内亚比绍', 12, -15),
 ('gy', 'Guyana', 'غيانا', 'Guyana', 'Guyana', 'Guyana', 'Guyana', 'Guyana', 'ガイアナ', 'Guiana', 'Guyana', 'Гайана', 'Guyana', '圭亞那', '圭亚那', 5, -59),
-('hk', 'Hong Kong', 'هونج كونج الصينية', 'Hongkong, zvláštní administrativní oblast Číny', 'Sonderverwaltungszone Hongkong', 'Región Administrativa Especial de Hong Kong de la República Popular China', 'R.A.S. chinoise de Hong Kong', 'Hongkong SAR van China', '中華人民共和国香港特別行政区', 'Hong Kong - Região Administrativa Especial da China', 'Regione Amministrativa Speciale di Hong Kong della Repubblica Popolare Cinese', 'Гонконг, Особый Административный Район Китая', 'Hong Kong', '香港', '香港', 22.15, 114.1),
+('hk', 'Hong Kong', 'هونج كونج الصينية', 'Hongkong', 'Hongkong', 'Hong Kong', 'Hong Kong', 'Hongkong', '香港', 'Hong Kong', 'Hong Kong', 'Гонконг', 'Hong Kong', '香港', '香港', 22.15, 114.1),
 ('hm', 'Heard Island and Mcdonald Islands', 'جزيرة هيرد وماكدونالد', 'Ostrovy Heard a McDonald', 'Heard- und McDonald-Inseln', 'Islas Heard y McDonald', 'Îles Heard et MacDonald', 'Heard- en McDonaldeilanden', 'ハード島・マクドナルド諸島', 'Ilha Heard e Ilhas McDonald', 'Isole Heard ed Isole McDonald', 'Острова Херд и Макдональд', 'Heard and McDonald Islands', '赫德島和麥當勞群島', '赫德岛和麦当劳群岛', -53.06, 72.31),
 ('hn', 'Honduras', 'هندوراس', 'Honduras', 'Honduras', 'Honduras', 'Honduras', 'Honduras', 'ホンジュラス', 'Honduras', 'Honduras', 'Гондурас', 'Honduras', '洪都拉斯', '洪都拉斯', 15, -86.3),
 ('hr', 'Croatia (Hrvatska)', 'كرواتيا', 'Chorvatsko', 'Kroatien', 'Croacia', 'Croatie', 'Kroatië', 'クロアチア', 'Croácia', 'Croazia', 'Хорватия', 'Croatia (Hrvatska)', '克羅地亞', '克罗地亚', 45.1, 15.3),
@@ -180,7 +181,7 @@ INSERT INTO `countries` (`code`, `iso_country`, `country_ar_SA`, `country_cs_CZ`
 ('ml', 'Mali', 'مالي', 'Mali', 'Mali', 'Mali', 'Mali', 'Mali', 'マリ', 'Mali', 'Mali', 'Мали', 'Mali', '馬里', '马里', 17, -4),
 ('mm', 'Myanmar', 'ميانمار', 'Myanmar', 'Myanmar', 'Myanmar', 'Myanmar', 'Myanmar', 'ミャンマー', 'Mianmar', 'Myanmar', 'Мьянма', 'Burma (Myanmar)', '緬甸', '缅甸', 22, 98),
 ('mn', 'Mongolia', 'منغوليا', 'Mongolsko', 'Mongolei', 'Mongolia', 'Mongolie', 'Mongolië', 'モンゴル', 'Mongólia', 'Mongolia', 'Монголия', 'Mongolia', '蒙古', '蒙古', 46, 105),
-('mo', 'Macau', 'ماكاو الصينية', 'Zvláštní administrativní oblast Číny Macao', 'Sonderverwaltungszone Macao', 'Región Administrativa Especial de Macao de la República Popular China', 'R.A.S. chinoise de Macao', 'Macao SAR van China', '中華人民共和国マカオ特別行政区', 'Macau - Região Administrativa Especial da China', 'Regione Amministrativa Speciale di Macao della Repubblica Popolare Cinese', 'Макао (особый административный район КНР)', 'Macau', '澳門', '澳门', 22.1, 113.33),
+('mo', 'Macau', 'ماكاو الصينية', 'Macao', 'Macao', 'Macao', 'Macao', 'Macao', 'マカオ', 'Macau', 'Macao', 'Макао', 'Macau', '澳門', '澳门', 22.1, 113.33),
 ('mp', 'Northern Mariana Islands', 'جزر ماريانا الشمالية', 'Severní Mariany', 'Nördliche Marianen', 'Islas Marianas del Norte', 'Îles Mariannes du Nord', 'Noordelijke Marianeneilanden', '北マリアナ諸島', 'Ilhas Mariana do Norte', 'Isole Marianne Settentrionali', 'Северные Марианские Острова', 'Northern Mariana Islands', '北馬里亞納群島', '北马里亚纳群岛', 15.12, 145.45),
 ('mq', 'Martinique', 'مارتينيك', 'Martinik', 'Martinique', 'Martinica', 'Martinique', 'Martinique', 'マルティニーク島', 'Martinica', 'Martinica', 'Мартиник', 'Martinique', '馬提尼克島', '马提尼克岛', 14.4, -61),
 ('mr', 'Mauritania', 'موريتانيا', 'Mauritánie', 'Mauretanien', 'Mauritania', 'Mauritanie', 'Mauritanië', 'モーリタニア', 'Mauritânia', 'Mauritania', 'Мавритания', 'Mauritania', '毛里塔尼亞', '毛里塔尼亚', 20, -12),
@@ -244,12 +245,12 @@ INSERT INTO `countries` (`code`, `iso_country`, `country_ar_SA`, `country_cs_CZ`
 ('sy', 'Syrian Arab Republic', 'سوريا', 'Sýrie', 'Syrien', 'Siria', 'Syrie', 'Syrië', 'シリア', 'Síria', 'Siria', 'Сирийская Арабская Республика', 'Syrian Arab Republic', '敘利亞', '叙利亚', 35, 38),
 ('sz', 'Swaziland', 'سوازيلاند', 'Svazijsko', 'Swasiland', 'Suazilandia', 'Swaziland', 'Swaziland', 'スワジランド', 'Suazilândia', 'Swaziland', 'Свазиленд', 'Swaziland', '斯威士蘭', '斯威士兰', -26.3, 31.3),
 ('tc', 'Turks and Caicos Islands', 'جزر الترك وجايكوس', 'Ostrovy Caicos a Turks', 'Turks- und Caicosinseln', 'Islas Turcas y Caicos', 'Îles Turks et Caïques', 'Turks- en Caicoseilanden', 'タークス諸島・カイコス諸島', 'Ilhas Turcas e Caicos', 'Isole Turks e Caicos', 'Острова Тёркс и Кайкос', 'Turks and Caicos Islands', '特克斯和凱科斯群島', '特克斯和凯科斯群岛', 21.45, -71.35),
-('td', 'Chad', 'تشاد', 'Čad', 'Tschad', 'Chad', 'Tchad', 'Tsjaad', 'チャド', 'Chade', 'Ciad', 'Чад', 'Chad', '乍得', '乍得', 15, 19);
-INSERT INTO `countries` (`code`, `iso_country`, `country_ar_SA`, `country_cs_CZ`, `country_de_DE`, `country_es_ES`, `country_fr_FR`, `country_nl_NL`, `country_ja_JP`, `country_pt_PT`, `country_it_IT`, `country_ru_RU`, `country_en_GB`, `country_zh_TW`, `country_zh_CN`, `lat`, `lon`) VALUES
+('td', 'Chad', 'تشاد', 'Čad', 'Tschad', 'Chad', 'Tchad', 'Tsjaad', 'チャド', 'Chade', 'Ciad', 'Чад', 'Chad', '乍得', '乍得', 15, 19),
 ('tf', 'French Southern Territories', 'المقاطعات الجنوبية الفرنسية', 'Francouzská jižní teritoria', 'Französische Süd- und Antarktisgebiete', 'Territorios Australes Franceses', 'Terres australes françaises', 'Franse Gebieden in de zuidelijke Indische Oceaan', 'フランス領極南諸島', 'Territórios Franceses do Sul', 'Territori australi francesi', 'Французские Южные Территории', 'French Southern Territories', '法國南部領土', '法国南部领土', -43, 67),
 ('tg', 'Togo', 'توجو', 'Togo', 'Togo', 'Togo', 'Togo', 'Togo', 'トーゴ', 'Togo', 'Togo', 'Того', 'Togo', '多哥', '多哥', 8, 1.1),
 ('th', 'Thailand', 'تايلند', 'Thajsko', 'Thailand', 'Tailandia', 'Thaïlande', 'Thailand', 'タイ', 'Tailândia', 'Tailandia', 'Таиланд', 'Thailand', '泰國', '泰国', 15, 100),
-('tj', 'Tajikistan', 'طاجكستان', 'Tádžikistán', 'Tadschikistan', 'Tayikistán', 'Tadjikistan', 'Tadzjikistan', 'タジキスタン', 'Tajiquistão', 'Tagikistan', 'Таджикистан', 'Tajikistan', '塔吉克斯坦', '塔吉克斯坦', 39, 71),
+('tj', 'Tajikistan', 'طاجكستان', 'Tádžikistán', 'Tadschikistan', 'Tayikistán', 'Tadjikistan', 'Tadzjikistan', 'タジキスタン', 'Tajiquistão', 'Tagikistan', 'Таджикистан', 'Tajikistan', '塔吉克斯坦', '塔吉克斯坦', 39, 71);
+INSERT INTO `countries` (`code`, `iso_country`, `country_ar_SA`, `country_cs_CZ`, `country_de_DE`, `country_es_ES`, `country_fr_FR`, `country_nl_NL`, `country_ja_JP`, `country_pt_PT`, `country_it_IT`, `country_ru_RU`, `country_en_GB`, `country_zh_TW`, `country_zh_CN`, `lat`, `lon`) VALUES
 ('tk', 'Tokelau', 'توكيلو', 'Tokelau', 'Tokelau', 'Tokelau', 'Tokelau', 'Tokelau', 'トケラウ諸島', 'Toquelau', 'Tokelau', 'Токелау', 'Tokelau', '托克勞', '托克劳', -9, -172),
 ('tm', 'Turkmenistan', 'تركمانستان', 'Turkmenistán', 'Turkmenistan', 'Turkmenistán', 'Turkménistan', 'Turkmenistan', 'トルクメニスタン', 'Turquemenistão', 'Turkmenistan', 'Туркменистан', 'Turkmenistan', '土庫曼斯坦', '土库曼斯坦', 40, 60),
 ('tn', 'Tunisia', 'تونس', 'Tunisko', 'Tunesien', 'Túnez', 'Tunisie', 'Tunesië', 'チュニジア', 'Tunísia', 'Tunisia', 'Тунис', 'Tunisia', '突尼斯', '突尼斯', 34, 9),
@@ -262,7 +263,7 @@ INSERT INTO `countries` (`code`, `iso_country`, `country_ar_SA`, `country_cs_CZ`
 ('tz', 'Tanzania, United Republic of', 'تانزانيا', 'Tanzanie', 'Tansania', 'Tanzania', 'Tanzanie', 'Tanzania', 'タンザニア', 'Tanzânia', 'Tanzania', 'Танзания', 'Tanzania', '坦桑尼亞', '坦桑尼亚', -6, 35),
 ('ua', 'Ukraine', 'أوكرانيا', 'Ukrajina', 'Ukraine', 'Ucrania', 'Ukraine', 'Oekraïne', 'ウクライナ', 'Ucrânia', 'Ucraina', 'Украина', 'Ukraine', '烏克蘭', '乌克兰', 49, 32),
 ('ug', 'Uganda', 'أوغندا', 'Uganda', 'Uganda', 'Uganda', 'Ouganda', 'Oeganda', 'ウガンダ', 'Uganda', 'Uganda', 'Уганда', 'Uganda', '烏干達', '乌干达', 1, 32),
-('uk', 'United Kingdom', 'المملكة المتحدة لبريطانيا العظمى وأيرلندا الشمالية', 'Spojené království Velké Británie a Severního Irska', 'Vereinigtes Königreich von Großbritannien und Nordirland', 'Reino Unido de Gran Bretaña e Irlanda del Norte', 'Royaume-Uni de Grande-Bretagne et d''Irlande du Nord', 'Verenigd Koninkrijk van Groot-Brittannië en Noord-Ierland', 'グレートブリテンのイギリスと北アイルランド', 'Reino Unido da Grã-Bretanha e Irlanda do Norte', 'Regno Unito di Gran Bretagna e Irlanda del Nord', 'Соединенное Королевство Великобритании и Северной Ирландии', 'United Kingdom', '英國', '英国', 54, -2),
+('uk', 'United Kingdom', 'بريطانيا العظمي', 'Velká Británie', 'Großbritannien', 'Gran Bretaña', 'Grande-Bretagne', 'Groot-Brittannië', 'グレート·ブリテン', 'Grã-Bretanha', 'Gran Bretagna', 'Великобритания', 'United Kingdom', '英國', '英国', 54, -2),
 ('us', 'United States', 'الولايات المتحدة الأمريكية', 'Spojené státy', 'Vereinigte Staaten', 'Estados Unidos', 'États-Unis', 'Verenigde Staten', 'アメリカ合衆国', 'Estados Unidos', 'Stati Uniti', 'США', 'United States', '美國', '美国', 38, -97),
 ('uy', 'Uruguay', 'أورجواي', 'Uruguay', 'Uruguay', 'Uruguay', 'Uruguay', 'Uruguay', 'ウルグアイ', 'Uruguai', 'Uruguay', 'Уругвай', 'Uruguay', '烏拉圭', '乌拉圭', -33, -56),
 ('uz', 'Uzbekistan', 'أوزبكستان', 'Uzbekistán', 'Usbekistan', 'Uzbekistán', 'Ouzbékistan', 'Oezbekistan', 'ウズベキスタン', 'Usbequistão', 'Uzbekistan', 'Узбекистан', 'Uzbekistan', '烏茲別克斯坦', '乌兹别克斯坦', 41, 64),
@@ -282,7 +283,7 @@ INSERT INTO `countries` (`code`, `iso_country`, `country_ar_SA`, `country_cs_CZ`
 ('zm', 'Zambia', 'زامبيا', 'Zambie', 'Sambia', 'Zambia', 'Zambie', 'Zambia', 'ザンビア', 'Zâmbia', 'Zambia', 'Замбия', 'Zambia', '贊比亞', '赞比亚', -15, 30),
 ('cd', 'Congo, Democratic Republic of the', 'جمهورية الكونغو الديمقراطية', 'Demokratická republika Kongo', 'Demokratische Republik Kongo', 'República Democrática del Congo', 'République démocratique du Congo', 'Congo-Kinshasa', 'コンゴ民主共和国 (キンシャサ)', 'República Democrática do Congo', 'Repubblica Democratica del Congo', 'Демократическая Республика Конго', 'Democratic Republic of Congo', '剛果民主共和國', '刚果民主共和国', -4.04, 30.75),
 ('zw', 'Zimbabwe', 'زيمبابوي', 'Zimbabwe', 'Simbabwe', 'Zimbabue', 'Zimbabwe', 'Zimbabwe', 'ジンバブエ', 'Zimbabwe', 'Zimbabwe', 'Зимбабве', 'Zimbabwe', '津巴布韋', '津巴布韦', -20, 30),
-('ap', '', '', '', '', '', '', '', '', '', '', '', 'Asia-Pacific', '亞太', '亚太', -2.81, 128.5),
+('ap', '', 'آسيا والمحيط الهادئ', 'Asie a Tichomoří', 'Asien-Pazifik', 'Asia y el Pacífico', 'Asie-Pacifique', 'Asia-Pacific', 'アジア太平洋', 'Ásia-Pacífico', 'Asia-Pacifico', 'Азиатско-Тихоокеанский', 'Asia-Pacific', '亞太', '亚太', -2.81, 128.5),
 ('rs', 'Serbia', 'صربيا', 'Srbsko', 'Serbien', 'Serbia', 'Serbie', 'Servië', 'セルビア', 'Sérvia', 'Serbia', 'Сербия', 'Republic of Serbia', '塞爾維亞', '塞尔维亚', 44.02, 21.01),
 ('ax', 'Aland Islands', 'جزر أولان', 'Alandy', 'Alandinseln', 'Islas Åland', 'Îles Åland', 'Alandeilanden', 'オーランド諸島', 'Ilhas Alanda', 'Isole Aland', 'Аландские острова', 'Åland Islands', '奧蘭群島', '奥兰群岛', 60.21, 20.16),
 ('eu', '', 'أوروبا', 'Evropa', 'Europa', 'Europa', 'Europe', 'Europa', 'ヨーロッパ', 'Europa', 'Europa', 'Европа', 'Europe', '歐洲', '欧洲', 50, 15),
