@@ -32,6 +32,32 @@ This database consists of one table which allows for translation of
 * zh_CN
 * zh_TW
 
-This database is based in part on Per Gustafsson's ip2nation
-(ip2nation.com). This table is fully compatible with the ip2nation
-database.
+This database is based in part on Per Gustafsson's [http://ip2nation.com/](ip2nation). 
+This table is fully compatible with the ip2nation database.
+
+Usage Examples
+==============
+
+**Select (drop-down list):**
+
+```php
+$language_code = 'zh_HK';
+$user_country = 'cn';
+
+echo '<select name="ccode" class="countryselect">';
+
+if     ($language_code == 'zh_HK') $to = 'zh_TW';
+elseif ($language_code == 'en_US') $to = 'en_GB';
+else $to = $language_code;
+
+$sql = "SELECT * FROM `countries` ORDER BY `country_".$to."` ASC";
+$result = mysqli->query($sql);
+while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+	if (!in_array($row['code'], array('yu','eu','ap','nt','aq','01'))) {
+		echo '<option value="'.$row['code'].'"';
+		if ($user_country === $row['code']) echo ' SELECTED';
+		echo '>'.$row['country_'.$to].'</option>';
+	}
+}
+echo '</select><br />';
+```
