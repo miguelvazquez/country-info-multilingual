@@ -6,11 +6,11 @@ Countries
 About/關於/关于/約
 =================
 
-Translates 2-letter country ISO code to country name.
+Translates 2-letter country ISO code to country name in various languages.
 
-這個資料庫能夠把兩個字母的國家代碼，轉換成繁體及簡體中文的國家名稱。
+這個資料庫能夠把兩個字母的國家代碼，轉換成繁體中文、簡體中文、日文、以及其他語言的國家名稱。
 
-このデータベースには、日本の国民の名前に変換されて、2文字の国コードであることができます。
+このデータベースには、国名の日本語、繁体字中国語、簡体字中国語、および他の言語に変換し、2文字の国コードであることができます。
 
 Details
 =======
