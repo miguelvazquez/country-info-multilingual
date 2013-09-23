@@ -1,6 +1,7 @@
 --
 -- Countries
--- Updated: 2013-09-19 at 11:39 GMT
+-- Rev:     1.1.0
+-- Updated: 2013-09-23 at 23:02 GMT
 -- Copyright (c) 2012-2013 Peter Kahl. All rights reserved.
 -- Use of this source code is governed by a GNU General Public License
 -- that can be found in the LICENSE file.
