@@ -6,7 +6,7 @@ Countries
 About/關於/关于/約
 =================
 
-Translates 2-letter country ISO code to country name in various languages.
+Translates ISO 2-letter country codes to country names in various languages.
 
 這個資料庫能夠把兩個字母的國家代碼，轉換成繁體中文、簡體中文、日文、以及其他語言的國家名稱。
 
@@ -32,8 +32,7 @@ This database consists of one table which allows for translation of
 * zh_CN
 * zh_TW
 
-This database is based in part on Per Gustafsson's [ip2nation](http://ip2nation.com/) database. 
-This table is fully compatible with the ip2nation database.
+The structure of this database is based on Per Gustafsson's [ip2nation](http://ip2nation.com/) database and is fully compatible.
 
 Usage Examples
 ==============
