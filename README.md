@@ -5,23 +5,24 @@ Copyright (c) 2012-2013, Peter Kahl. All rights reserved.
 
 [https://github.com/peterkahl/countries](https://github.com/peterkahl/countries)
 
-About/關於/关于/約
+About/關於/約
 =================
 
-Translates ISO 2-letter country codes to country names in various languages.
+Translates ISO 2-letter country codes to country names in various languages. Converts country
+code to language.
 
-這個資料庫能夠把兩個字母的國家代碼，轉換成繁體中文、簡體中文、日文、以及其他語言的國家名稱。
+這個資料庫能夠把兩個字母的國家代碼，轉換成繁體中文、簡體中文、日文、以及其他語言的國家名稱。國家代碼轉換語言代碼。
 
-このデータベースには、国名の日本語、繁体字中国語、簡体字中国語、および他の言語に変換し、2文字の国コードであることができます。
+このデータベースには、国名の日本語、繁体字中国語、簡体字中国語、および他の言語に変換し、2文字の国コードであることができます。国コード変換言語コード。
 
 Details
 =======
 
 This database consists of one table which allows for translation of
-2-letter country ISO code to several languages, locale (country to language conversion)
-and coordinates (lat, lon).
+2-letter country ISO code to several languages; country to locale (country to language conversion);
+country to coordinates (lat, lon).
 
-These are the languages (at this moment):
+These are the country name languages (at this moment):
 
 * ar_SA
 * cs_CZ
