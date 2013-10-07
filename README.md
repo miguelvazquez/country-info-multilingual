@@ -1,6 +1,8 @@
 Countries
 =========
 
+Copyright (c) 2012-2013, Peter Kahl. All rights reserved.
+
 [https://github.com/peterkahl/countries](https://github.com/peterkahl/countries)
 
 About/關於/关于/約
@@ -16,7 +18,10 @@ Details
 =======
 
 This database consists of one table which allows for translation of
-2-letter country ISO code to country name in 13 languages and coordinates (lat, lon):
+2-letter country ISO code to several languages, locale (country to language conversion)
+and coordinates (lat, lon).
+
+These are the languages (at this moment):
 
 * ar_SA
 * cs_CZ
@@ -85,3 +90,55 @@ echo $name; // 德國
 
 ?>
 ```
+
+**Get language code(s):**
+
+```php
+<?php
+
+$country_code = 'gb';
+
+if ($country_code == 'gb') $country_code = 'uk';
+
+$sql = "SELECT * FROM `countries` WHERE `code`='".$country_code."' LIMIT 0,1";
+$result = mysqli->query($sql);
+while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+	$lang = $row['locale'];
+}
+
+echo $lang; // en_GB,ga_GB,cy_GB,gd_GB,kw_GB
+
+?>
+```
+
+License
+=======
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see [http://www.gnu.org/licenses/](http://www.gnu.org/licenses/).
+
+Change Log
+==========
+
+1.0.0 ..... 2012-11-25
+	Initial release
+
+1.1.0 ..... 2013-09-24
+	Added languages.
+
+1.2.0 ..... 2013-10-07
+	Added locale.
+
+
+
+
