@@ -4,7 +4,7 @@
  *
  * Countries
  * Example of use (PHP) 
- * Copyright (c) 2012-2013 Peter Kahl. All rights reserved.
+ * Copyright (c) 2012-2013 Peter Kahl. All rights reserved. www.colossalmind.com
  * Use of this source code is governed by a GNU General Public License
  * that can be found in the LICENSE file.
  *

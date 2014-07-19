@@ -1,7 +1,7 @@
 Countries
 =========
 
-Copyright (c) 2012-2013, Peter Kahl. All rights reserved.
+Copyright (c) 2012-2013, Peter Kahl. All rights reserved. www.colossalmind.com
 
 [https://github.com/peterkahl/countries](https://github.com/peterkahl/countries)
 
