@@ -1,18 +1,26 @@
 <?php
-
 /**
- *
  * Countries
- * Example of use (PHP) 
- * Copyright (c) 2012-2013 Peter Kahl. All rights reserved. www.colossalmind.com
- * Use of this source code is governed by a GNU General Public License
- * that can be found in the LICENSE file.
  *
- * https://github.com/peterkahl/countries
+ * @version    0.2 (2017-01-31)
+ * @author     Peter Kahl <peter.kahl@colossalmind.com>
+ * @since      2012
+ * @license    Apache License, Version 2.0
  *
+ * Copyright 2012-2017 Peter Kahl <peter.kahl@colossalmind.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      <http://www.apache.org/licenses/LICENSE-2.0>
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
-
 
 define('DB_HOSTNAME', 'localhost');
 define('DB_DBNAME',   'someDBname');
@@ -26,24 +34,21 @@ if ($mysqli->connect_error) {
 	die('Connect Error ('.$mysqli->connect_errno.') '.$mysqli->connect_error);
 }
 
-$mysqli->set_charset("utf8");
+$mysqli->set_charset("utf8mb4"); # Very important!
 
-//----------------------------------------------------------------------
+$country = 'de';
 
-$lang_code = 'zh_HK';
-
-$country_code = 'de';
-
-$sql = "SELECT * FROM `countries` WHERE `code`='".$country_code."' LIMIT 0,1";
+$sql = "SELECT * FROM `countries` WHERE `code`='".$country."' LIMIT 0,1";
 $result = mysqli->query($sql);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-	if     ($lang_code == 'zh_HK') $lang_code = 'zh_TW';
-	elseif ($lang_code == 'en_US') $lang_code = 'en_GB';
-	$name = $row['country_'.$lang_code];
+	$info = $row['country_'.$lang];
 }
 
-echo $name; // 德國
-
-//----------------------------------------------------------------------
-
-
+echo $info['country_de'];    # Deutschland
+echo $info['country_ru'];    # Германия
+echo $info['country_zh-hk']; # 德國
+echo $info['flag'];          # 🇩🇪
+echo $info['cont'];          # EU
+echo $info['lat'];           # 51
+echo $info['lon'];           # 9
+echo $info['locale'];        # de_DE

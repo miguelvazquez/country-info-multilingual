@@ -1,16 +1,8 @@
-Countries
-=========
+#Countries
+Translates ISO 2-letter country code to:
 
-Copyright (c) 2012-2015, Peter Kahl. All rights reserved. www.colossalmind.com
-
-[https://github.com/peterkahl/countries](https://github.com/peterkahl/countries)
-
-About/關於/約
-=================
-
-Translates ISO 2-letter country codes to:
-
-* country names in various languages
+* country names in 14 possible languages
+* emoji flag
 * to locale (language code)
 * corresponding continent code
 * approximate geolocation (lat, lon)
@@ -19,75 +11,69 @@ Translates ISO 2-letter country codes to:
 
 このデータベースには、国名の日本語、繁体字中国語、簡体字中国語、および他の言語に変換し、2文字の国コードであることができます。国コード変換言語コード。
 
-These are the country name languages (at this moment):
+These are the country name languages:
 
-* ar_SA
-* cs_CZ
-* de_DE
-* en_GB
-* es_ES
-* fr_FR
-* it_IT
-* ja_JP
-* nl_NL
-* pt_PT
-* ru_RU
-* sk_SK
-* zh_CN
-* zh_TW
+* ar
+* cs
+* de
+* en
+* es
+* fr
+* it
+* ja
+* nl
+* pt
+* ru
+* sk
+* zh-cn
+* zh-hk
 
 The structure of this database is based on Per Gustafsson's [ip2nation](http://ip2nation.com/) database and is fully compatible therewith.
 
-Usage Examples
-==============
+Make sure that connection to the database uses `utf8mb4`. This is very important.
+
+##Usage Examples
 
 **Select (drop-down list):**
 
 ```php
-<?php
+$lang = 'zh-hk';
+$country = 'cn';
 
-$language_code = 'zh_HK';
-$user_country = 'cn';
+echo '<select>';
 
-echo '<select name="ccode" class="countryselect">';
+if ($lang == 'zh-tw') {
+	$lang = 'zh-hk';
+}
 
-if     ($language_code == 'zh_HK') $to = 'zh_TW';
-elseif ($language_code == 'en_US') $to = 'en_GB';
-else $to = $language_code;
-
-$sql = "SELECT * FROM `countries` ORDER BY `country_".$to."` ASC";
+$sql = "SELECT * FROM `countries` ORDER BY `country_".$lang."` ASC";
 $result = mysqli->query($sql);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 	if (!in_array($row['code'], array('yu','eu','ap','nt','aq','01'))) {
 		echo '<option value="'.$row['code'].'"';
-		if ($user_country === $row['code']) echo ' SELECTED';
-		echo '>'.$row['country_'.$to].'</option>';
+		if ($country === $row['code']) echo ' SELECTED';
+		echo '>'.$row['country_'.$lang].'</option>';
 	}
 }
 echo '</select>';
-
-?>
 ```
 
 **Translate country name:**
 
 ```php
-<?php
+$lang = 'zh-hk';
+$country = 'de';
 
-$lang_code = 'zh_HK';
-$country_code = 'de';
-
-$sql = "SELECT * FROM `countries` WHERE `code`='".$country_code."' LIMIT 0,1";
+$sql = "SELECT * FROM `countries` WHERE `code`='".$country."' LIMIT 0,1";
 $result = mysqli->query($sql);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-	if     ($lang_code == 'zh_HK') $lang_code = 'zh_TW';
-	elseif ($lang_code == 'en_US') $lang_code = 'en_GB';
-	$name = $row['country_'.$lang_code];
+	if ($lang == 'zh-tw') {
+		$lang = 'zh-hk';
+	}
+	$name = $row['country_'.$lang];
 }
 
-echo $name; // 德國
-
-?>
+echo $name; # 德國
 ```
 
 **Get language code(s):**
@@ -95,53 +81,37 @@ echo $name; // 德國
 ```php
 <?php
 
-$country_code = 'gb';
+$country = 'gb';
 
-if ($country_code == 'gb') $country_code = 'uk';
+if ($country == 'gb') {
+	$country = 'uk';
+}
 
-$sql = "SELECT * FROM `countries` WHERE `code`='".$country_code."' LIMIT 0,1";
+$sql = "SELECT * FROM `countries` WHERE `code`='".$country."' LIMIT 0,1";
 $result = mysqli->query($sql);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 	$lang = $row['locale'];
 }
 
-echo $lang; // en_GB,ga_GB,cy_GB,gd_GB,kw_GB
-
-?>
+echo $lang; # en_GB,ga_GB,cy_GB,gd_GB,kw_GB
 ```
 
-License
-=======
+**Get emoji flag:**
 
-Copyright 2012-2015 Peter Kahl (www.colossalmind.com)
+```php
+<?php
 
-Licensed under the Apache License, Version 2.0 (the "License"); you
-may not use this file except in compliance with the License. You may
-obtain a copy of the License at
+$country = 'gb';
 
-      http://www.apache.org/licenses/LICENSE-2.0
+if ($country == 'gb') {
+	$country = 'uk';
+}
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-implied. See the License for the specific language governing
-permissions and limitations under the License.
+$sql = "SELECT * FROM `countries` WHERE `code`='".$country."' LIMIT 0,1";
+$result = mysqli->query($sql);
+while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+	$flag = $row['flag'];
+}
 
-Change Log
-==========
-
-1.0.0 ..... 2012-11-25
-	Initial release
-
-1.1.0 ..... 2013-09-24
-	Added languages.
-
-1.2.0 ..... 2013-10-07
-	Added locale.
-
-1.3.0 ..... 2015-07-03
-	Added sk_SK column. Added continent column. Changed license to Apache version 2.0.
-
-
-
-
+echo $flag; # 🇬🇧
+```
