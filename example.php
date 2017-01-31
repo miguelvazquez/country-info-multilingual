@@ -41,7 +41,7 @@ $country = 'de';
 $sql = "SELECT * FROM `countries` WHERE `code`='".$country."' LIMIT 0,1";
 $result = mysqli->query($sql);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-	$info = $row['country_'.$lang];
+	$info = $row;
 }
 
 echo $info['country_de'];    # Deutschland
