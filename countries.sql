@@ -1,6 +1,6 @@
 --
 -- Countries
---
+-- Version Date: 20170-02-10
 --
 -- Copyright 2012-2017 Peter Kahl <peter.kahl@colossalmind.com>
 --
@@ -266,7 +266,7 @@ INSERT INTO `countries` (`code`, `flag`, `iso_country`, `locale`, `country_ar`, 
 ('tz', '🇹🇿', 'Tanzania, United Republic of', 'sw_TZ,en_TZ', 'تانزانيا', 'Tanzanie', 'Tansania', 'Tanzania', 'Tanzania', 'Tanzanie', 'Tanzania', 'タンザニア', 'Tanzania', 'Tanzânia', 'Танзания', 'Tanzánia', '坦桑尼亞', '坦桑尼亚', -6, 35, 'AF'),
 ('ua', '🇺🇦', 'Ukraine', 'uk_UA', 'أوكرانيا', 'Ukrajina', 'Ukraine', 'Ukraine', 'Ucrania', 'Ukraine', 'Ucraina', 'ウクライナ', 'Oekraïne', 'Ucrânia', 'Украина', 'Ukrajina', '烏克蘭', '乌克兰', 49, 32, 'EU'),
 ('ug', '🇺🇬', 'Uganda', 'en_UG,sw_UG', 'أوغندا', 'Uganda', 'Uganda', 'Uganda', 'Uganda', 'Ouganda', 'Uganda', 'ウガンダ', 'Oeganda', 'Uganda', 'Уганда', 'Uganda', '烏干達', '乌干达', 1, 32, 'AF'),
-('uk', '🇬🇧', 'United Kingdom', 'en_GB,ga_GB,cy_GB,gd_GB,kw_GB', 'بريطانيا العظمي', 'Velká Británie', 'Großbritannien', 'United Kingdom', 'Gran Bretaña', 'Grande-Bretagne', 'Gran Bretagna', 'グレート·ブリテン', 'Groot-Brittannië', 'Grã-Bretanha', 'Великобритания', 'Veľká Británia', '英國', '英国', 54, -2, 'EU'),
+('gb', '🇬🇧', 'United Kingdom', 'en_GB,ga_GB,cy_GB,gd_GB,kw_GB', 'بريطانيا العظمي', 'Velká Británie', 'Großbritannien', 'United Kingdom', 'Gran Bretaña', 'Grande-Bretagne', 'Gran Bretagna', 'グレート·ブリテン', 'Groot-Brittannië', 'Grã-Bretanha', 'Великобритания', 'Veľká Británia', '英國', '英国', 54, -2, 'EU'),
 ('us', '🇺🇸', 'United States', 'en_US', 'الولايات المتحدة الأمريكية', 'Spojené státy', 'Vereinigte Staaten', 'United States', 'Estados Unidos', 'États-Unis', 'Stati Uniti', 'アメリカ合衆国', 'Verenigde Staten', 'Estados Unidos', 'США', 'Spojené štáty', '美國', '美国', 38, -97, 'NA'),
 ('uy', '🇺🇾', 'Uruguay', 'es_UY', 'أورجواي', 'Uruguay', 'Uruguay', 'Uruguay', 'Uruguay', 'Uruguay', 'Uruguay', 'ウルグアイ', 'Uruguay', 'Uruguai', 'Уругвай', 'Uruguaj', '烏拉圭', '乌拉圭', -33, -56, 'SA'),
 ('uz', '🇺🇿', 'Uzbekistan', 'uz_UZ,kaa_UZ', 'أوزبكستان', 'Uzbekistán', 'Usbekistan', 'Uzbekistan', 'Uzbekistán', 'Ouzbékistan', 'Uzbekistan', 'ウズベキスタン', 'Oezbekistan', 'Usbequistão', 'Узбекистан', 'Uzbekistan', '烏茲別克斯坦', '乌兹别克斯坦', 41, 64, 'AS'),
@@ -295,7 +295,8 @@ INSERT INTO `countries` (`code`, `flag`, `iso_country`, `locale`, `country_ar`, 
 ('me', '🇲🇪', 'Montenegro', 'srp_ME,sq_ME,bs_ME,hr_ME,sr_ME', 'الجبل الأسود', 'Černá Hora', 'Montenegro', 'Montenegro', 'Montenegro', 'Monténégro', 'Montenegro', 'モンテネグロ', 'Montenegro', 'Montenegro', 'Черногория', 'Čierna Hora', '黑山', '黑山', 42.7400016784668, 19.309999465942383, 'EU'),
 ('cw', '🇨🇼', 'Curaçao', 'nl_CW', 'كوراساو', 'Curaçao', 'Curaçao', 'Curaçao', 'Curaçao', 'Curaçao', 'Curaçao', 'キュラソー', 'Curaçao', 'Curaçao', 'Кюрасао', 'Curaçao', '庫拉索', '库拉索', 12.164897, -68.961985, 'SA'),
 ('sx', '🇸🇽', 'Sint Maarten', 'nl_NL,en_NL', 'سانت مارتن', 'Sint Maarten', 'Sint Maarten', 'Sint Maarten', 'Sint Maarten', 'Sint Maarten', 'Sint Maarten', 'シントマールテン', 'Sint Maarten', 'Sint Maarten', 'Sint Maarten', 'Sint Maarten', '聖馬丁', '圣马丁', 18.056664, -63.059199, 'SA'),
-('bq', '🇧🇶', 'Caribbean Netherlands', 'nl_NL,en_NL', 'هولندا الكاريبي', 'Karibské Holandsko', 'Karibische Niederlande', 'Caribbean Netherlands', 'Caribe Países Bajos', 'Caraïbes Pays-Bas', 'Caraibi Olandesi', 'カリブ海オランダ', 'Caribisch Nederland', 'Caribe Holanda', 'Карибские Нидерланды', 'Karibské Holandsko', '加勒比荷蘭', '加勒比荷兰', 12.18, -68.25, 'SA');
+('bq', '🇧🇶', 'Caribbean Netherlands', 'nl_NL,en_NL', 'هولندا الكاريبي', 'Karibské Holandsko', 'Karibische Niederlande', 'Caribbean Netherlands', 'Caribe Países Bajos', 'Caraïbes Pays-Bas', 'Caraibi Olandesi', 'カリブ海オランダ', 'Caribisch Nederland', 'Caribe Holanda', 'Карибские Нидерланды', 'Karibské Holandsko', '加勒比荷蘭', '加勒比荷兰', 12.18, -68.25, 'SA'),
+('im', '🇮🇲', 'Isle of Man', 'en_GB', 'جزيرة آيل أوف مان', 'Isle of Man', 'Isle of Man', 'Isle of Man', 'Isla de Man', 'Isle of Man', 'Isle of Man', 'マン島', 'Isle of Man', 'Ilha de Man', 'Остров Мэн', 'Isle of Man', '馬恩島', '马恩岛', 54.224367, -4.527622, 'EU');
 
 --
 -- Indexes for dumped tables
@@ -309,6 +310,3 @@ ALTER TABLE `countries`
   ADD UNIQUE KEY `code_2` (`code`),
   ADD KEY `code` (`code`);
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
