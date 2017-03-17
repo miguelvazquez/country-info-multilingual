@@ -1,4 +1,4 @@
-#Countries
+# Countries
 Translates ISO 2-letter country code to:
 
 * country names in 14 possible languages
@@ -32,7 +32,7 @@ The structure of this database is based on Per Gustafsson's [ip2nation](http://i
 
 Make sure that connection to the database uses `utf8mb4`. This is very important.
 
-##Usage Examples
+## Usage Examples
 
 **Select (drop-down list):**
 
