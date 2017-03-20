@@ -1,9 +1,9 @@
-# Countries
+# Countries 國家 カントリー СТРАНЫ
 Translates ISO 2-letter country code to:
 
 * country names in 14 possible languages
-* emoji flag
-* to locale (language code)
+* emoji flags
+* code to locale (language code)
 * corresponding continent code
 * approximate geolocation (lat, lon)
 
@@ -11,7 +11,7 @@ Translates ISO 2-letter country code to:
 
 このデータベースには、国名の日本語、繁体字中国語、簡体字中国語、および他の言語に変換し、2文字の国コードであることができます。国コード変換言語コード。
 
-Эта база данных может быть использована для преобразования двубуквенного кода страны в название страны на традиционном китайском, упрощенном китайском, японском, русском и другим языкам.
+Эту базу данных возможно использовать для преобразования двухбуквенного кода страны на название страны на китайском (традиционном или упрощенном), японском, русском и другим языкам.
 
 These are the available languages:
 
@@ -32,7 +32,7 @@ These are the available languages:
 
 The structure of this database is based on Per Gustafsson's [ip2nation](http://ip2nation.com/) database and is fully compatible therewith.
 
-Make sure that connection to the database uses `utf8mb4`. This is very important.
+Make sure that connection to the database uses `utf8mb4`.
 
 ## Usage Examples
 
