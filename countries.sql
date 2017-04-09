@@ -17,7 +17,6 @@
 -- limitations under the License.
 --
 
-
 CREATE TABLE `countries` (
   `code` varchar(2) CHARACTER SET ascii NOT NULL DEFAULT '',
   `flag` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
@@ -44,7 +43,7 @@ CREATE TABLE `countries` (
   `dialcode` varchar(9) CHARACTER SET ascii NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-INSERT INTO `countries` VALUES
+INSERT INTO `countries` (`code`, `flag`, `country_iso`, `country_ar`, `country_cs`, `country_de`, `country_en`, `country_es`, `country_fr`, `country_it`, `country_ja`, `country_nl`, `country_pt`, `country_ru`, `country_sk`, `country_zh-cn`, `country_zh-hk`, `latitude`, `longitude`, `elevation`, `continent`, `locale`, `dialcode`) VALUES
 ('ad', '🇦🇩', 'Andorra', 'أندورا', 'Andorra', 'Andorra', 'Andorra', 'Andorra', 'Andorre', 'Andorra', 'アンドラ', 'Andorra', 'Andorra', 'Андорра', 'Andorra', '安道尔', '安道爾', 42.3, 1.3, 1996, 'EU', 'ca_AD', '376'),
 ('ae', '🇦🇪', 'United Arab Emirates', 'الامارات العربية المتحدة', 'Spojené arabské emiráty', 'Vereinigte Arabische Emirate', 'United Arab Emirates', 'Emiratos Árabes Unidos', 'Émirats arabes unis', 'Emirati Arabi Uniti', 'アラブ首長国連邦', 'Verenigde Arabische Emiraten', 'Emiratos Árabes Unidos', 'Объединенные Арабские Эмираты', 'Spojené arabské emiráty', '阿拉伯联合大公国', '阿拉伯聯合大公國', 24, 54, 149, 'AS', 'ar_AE', '971'),
 ('af', '🇦🇫', 'Afghanistan', 'أفغانستان', 'Afghánistán', 'Afghanistan', 'Afghanistan', 'Afganistán', 'Afghanistan', 'Afghanistan', 'アフガニスタン', 'Afghanistan', 'Afeganistão', 'Афганистан', 'Afganistan', '阿富汗', '阿富汗', 33, 65, 1784, 'AS', 'fa_AF,ps_AF', '93'),
@@ -247,10 +246,10 @@ INSERT INTO `countries` VALUES
 ('sy', '🇸🇾', 'Syrian Arab Republic', 'سوريا', 'Sýrie', 'Syrien', 'Syrian Arab Republic', 'Siria', 'Syrie', 'Siria', 'シリア', 'Syrië', 'Síria', 'Сирийская Арабская Республика', 'Sýrska arabská republika', '叙利亚', '敘利亞', 35, 38, 514, 'AS', 'ar_SY', '963'),
 ('sz', '🇸🇿', 'Swaziland', 'سوازيلاند', 'Svazijsko', 'Swasiland', 'Swaziland', 'Suazilandia', 'Swaziland', 'Swaziland', 'スワジランド', 'Swaziland', 'Suazilândia', 'Свазиленд', 'Svazijsko', '斯威士兰', '斯威士蘭', -26.3, 31.3, 305, 'AF', 'en_SZ,ss_SZ', '268'),
 ('tc', '🇹🇨', 'Turks and Caicos Islands', 'جزر الترك وجايكوس', 'Ostrovy Caicos a Turks', 'Turks- und Caicosinseln', 'Turks and Caicos Islands', 'Islas Turcas y Caicos', 'Îles Turks et Caïques', 'Isole Turks e Caicos', 'タークス諸島・カイコス諸島', 'Turks- en Caicoseilanden', 'Ilhas Turcas e Caicos', 'Острова Тёркс и Кайкос', 'Turks a Caicos', '特克斯和凯科斯群岛', '特克斯和凱科斯群島', 21.45, -71.35, 249, 'NA', 'en_TC', '1649'),
-('td', '🇹🇩', 'Chad', 'تشاد', 'Čad', 'Tschad', 'Chad', 'Chad', 'Tchad', 'Ciad', 'チャド', 'Tsjaad', 'Chade', 'Чад', 'Čad', '乍得', '乍得', 15, 19, 543, 'AF', 'fr_TD,ar_TD', '235'),
+('td', '🇹🇩', 'Chad', 'تشاد', 'Čad', 'Tschad', 'Chad', 'Chad', 'Tchad', 'Ciad', 'チャド', 'Tsjaad', 'Chade', 'Чад', 'Čad', '乍得', '乍得', 15, 19, 543, 'AF', 'fr_TD,ar_TD', '235');
+INSERT INTO `countries` (`code`, `flag`, `country_iso`, `country_ar`, `country_cs`, `country_de`, `country_en`, `country_es`, `country_fr`, `country_it`, `country_ja`, `country_nl`, `country_pt`, `country_ru`, `country_sk`, `country_zh-cn`, `country_zh-hk`, `latitude`, `longitude`, `elevation`, `continent`, `locale`, `dialcode`) VALUES
 ('tf', '🇹🇫', 'French Southern Territories', 'المقاطعات الجنوبية الفرنسية', 'Francouzská jižní teritoria', 'Französische Süd- und Antarktisgebiete', 'French Southern Territories', 'Territorios Australes Franceses', 'Terres australes françaises', 'Territori australi francesi', 'フランス領極南諸島', 'Franse Gebieden in de zuidelijke Indische Oceaan', 'Territórios Franceses do Sul', 'Французские Южные Территории', 'Francúzske južné územia', '法国南部领土', '法國南部領土', -43, 67, 249, 'AN', 'fr_TF', '262'),
-('tg', '🇹🇬', 'Togo', 'توجو', 'Togo', 'Togo', 'Togo', 'Togo', 'Togo', 'Togo', 'トーゴ', 'Togo', 'Togo', 'Того', 'Togo', '多哥', '多哥', 8, 1.1, 236, 'AF', 'fr_TG', '228');
-INSERT INTO `countries` VALUES
+('tg', '🇹🇬', 'Togo', 'توجو', 'Togo', 'Togo', 'Togo', 'Togo', 'Togo', 'Togo', 'トーゴ', 'Togo', 'Togo', 'Того', 'Togo', '多哥', '多哥', 8, 1.1, 236, 'AF', 'fr_TG', '228'),
 ('th', '🇹🇭', 'Thailand', 'تايلند', 'Thajsko', 'Thailand', 'Thailand', 'Tailandia', 'Thaïlande', 'Tailandia', 'タイ', 'Thailand', 'Tailândia', 'Таиланд', 'Thajsko', '泰国', '泰國', 15, 100, 287, 'AS', 'th_TH', '66'),
 ('tj', '🇹🇯', 'Tajikistan', 'طاجكستان', 'Tádžikistán', 'Tadschikistan', 'Tajikistan', 'Tayikistán', 'Tadjikistan', 'Tagikistan', 'タジキスタン', 'Tadzjikistan', 'Tajiquistão', 'Таджикистан', 'Tadžikistan', '塔吉克斯坦', '塔吉克斯坦', 39, 71, 3186, 'AS', 'tg_TJ,ru_TJ', '992'),
 ('tk', '🇹🇰', 'Tokelau', 'توكيلو', 'Tokelau', 'Tokelau', 'Tokelau', 'Tokelau', 'Tokelau', 'Tokelau', 'トケラウ諸島', 'Tokelau', 'Toquelau', 'Токелау', 'Tokelau', '托克劳', '托克勞', -9, -172, 249, 'OC', 'tkl_TK,en_TK,sm_TK', '690'),
@@ -287,7 +286,7 @@ INSERT INTO `countries` VALUES
 ('zw', '🇿🇼', 'Zimbabwe', 'زيمبابوي', 'Zimbabwe', 'Simbabwe', 'Zimbabwe', 'Zimbabue', 'Zimbabwe', 'Zimbabwe', 'ジンバブエ', 'Zimbabwe', 'Zimbabwe', 'Зимбабве', 'Zimbabwe', '津巴布韦', '津巴布韋', -20, 30, 961, 'AF', 'en_ZW,sn_ZW,nd_ZW', '263'),
 ('ap', '🏴', '', 'آسيا والمحيط الهادئ', 'Asie a Tichomoří', 'Asien-Pazifik', 'Asia-Pacific', 'Asia y el Pacífico', 'Asie-Pacifique', 'Asia-Pacifico', 'アジア太平洋', 'Asia-Pacific', 'Ásia-Pacífico', 'Азиатско-Тихоокеанский', 'Ázije a Tichomorie', '亚太', '亞太', -2.81, 128.5, 100, 'AS', 'en_GB', ''),
 ('rs', '🇷🇸', 'Serbia', 'صربيا', 'Srbsko', 'Serbien', 'Republic of Serbia', 'Serbia', 'Serbie', 'Serbia', 'セルビア', 'Servië', 'Sérvia', 'Сербия', 'Srbsko', '塞尔维亚', '塞爾維亞', 44.02, 21.01, 442, 'EU', 'sr_RS', '381'),
-('ax', '🇦🇽', 'Aland Islands', 'جزر أولان', 'Alandy', 'Alandinseln', 'Åland Islands', 'Islas Åland', 'Îles Åland', 'Isole Aland', 'オーランド諸島', 'Alandeilanden', 'Ilhas Alanda', 'Аландские острова', 'Alandské ostrovy', '奥兰群岛', '奧蘭群島', 60.21, 20.16, 40, 'EU', 'sv_AX', ''),
+('ax', '🇦🇽', 'Aland Islands', 'جزر أولان', 'Alandy', 'Alandinseln', 'Åland Islands', 'Islas Åland', 'Îles Åland', 'Isole Aland', 'オーランド諸島', 'Alandeilanden', 'Ilhas Alanda', 'Аландские острова', 'Alandské ostrovy', '奥兰群岛', '奧蘭群島', 60.21, 20.16, 40, 'EU', 'sv_AX', '358'),
 ('eu', '🇪🇺', 'European Union', 'أوروبا', 'Evropská unie', 'Europa', 'European Union', 'Europa', 'Europe', 'Europa', 'ヨーロッパ', 'Europa', 'Europa', 'Европа', 'Európa', '欧洲', '歐洲', 50, 15, 249, 'EU', 'en_GB', ''),
 ('01', '🏁', '', 'الشخصية', 'soukromá', 'privat', 'private', 'privada', 'privé', 'privato', 'プライベート', 'privaat', 'privada', 'личный', 'súkromná', '私有', '私有', 0, 0, 249, '', 'en_GB', ''),
 ('ps', '🇵🇸', 'State of Palestine', 'دولة فلسطين', 'Palestina', 'Palästina', 'Palestine', 'Palestina', 'Palestine', 'Palestina', 'パレスチナ', 'Palestina', 'Palestina', 'Палестина', 'Palestína', '巴勒斯坦', '巴勒斯坦', 31.89, 34.9, 249, 'AS', 'ar_PS,he_PS', '970'),
@@ -306,5 +305,4 @@ ALTER TABLE `countries`
   ADD KEY `code` (`code`);
 SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
-
 
