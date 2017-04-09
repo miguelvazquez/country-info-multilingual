@@ -5,7 +5,9 @@ Translates ISO 2-letter country code to:
 * emoji flags
 * code to locale (language code)
 * corresponding continent code
-* approximate geolocation (lat, lon)
+* approximate geolocation (latitude, longitude)
+* approximate elevation (altitude in metres)
+* international calling code
 
 這個資料庫能夠把兩個字母的國家代碼，轉換成繁體中文、簡體中文、日文、俄語、以及其他語言的國家名稱。國家代碼轉換語言代碼。
 
