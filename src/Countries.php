@@ -5,7 +5,7 @@
  * Converts country code to full name in many languages and can
  * provide lots of other useful information.
  *
- * @version    1.0 (2017-05-03 05:15:00 GMT)
+ * @version    1.1 (2017-05-03 08:45:00 GMT)
  * @author     Peter Kahl <peter.kahl@colossalmind.com>
  * @since      2017
  * @license    Apache License, Version 2.0
@@ -39,7 +39,7 @@ class Countries {
     $available = array(
       'ar',
       'cs',
-      'de',
+      'da',
       'dk',
       'en',
       'es',
