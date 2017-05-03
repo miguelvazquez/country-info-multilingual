@@ -1,7 +1,9 @@
-# Countries 國家 カントリー СТРАНЫ
-Translates ISO 2-letter country code to:
+# Country Info (Multilingual)
 
-* country names in 14 languages and scripts
+Converts country code to full name and can provide lots of other useful information. Can be used to generate HTML code.
+
+Available data:
+* country names in 16 languages and scripts
 * emoji flags
 * locale (language code)
 * corresponding continent code
@@ -9,18 +11,15 @@ Translates ISO 2-letter country code to:
 * approximate elevation (altitude in metres)
 * international calling code
 
-這個資料庫能夠把兩個字母的國家代碼，轉換成繁體中文、簡體中文、日文、俄語、以及其他語言的國家名稱。國家代碼轉換語言代碼。
-
-このデータベースには、国名の日本語、繁体字中国語、簡体字中国語、および他の言語に変換し、2文字の国コードであることができます。国コード変換言語コード。
-
-Эту базу данных возможно использовать для преобразования двухбуквенного кода страны на название страны на китайском (традиционном или упрощенном), японском, русском и другим языкам.
-
+Available languages:
 * Arabic (عربى)
 * Czech (čeština)
 * German (Deutsch)
+* Danish (dansk)
 * English
 * Spanish (Español)
 * French (français)
+* Hebrew (עִברִית)
 * Italian (italiano)
 * Japanese (日本語)
 * Dutch (Nederlands)
@@ -30,29 +29,24 @@ Translates ISO 2-letter country code to:
 * Chinese simplified (中文简体)
 * Chinese traditional (中文繁體)
 
-## Database Connection
-Make sure that connection to the database uses `utf8mb4`.
-
 ## Usage Examples
 
-**Select (drop-down list) of country names:**
+**Generate HTML for select (drop-down list) of country names:**
 
 ```php
-<?php
+use peterkahl\Countries\Countries;
 
-$lang = 'zh-hk';
-$country = 'cn';
+$link = mysqli_connect($DB_HOSTNAME, $DB_USERNAME, $DB_PASSWORD, $DB_DBNAME);
+
+mysqli_set_charset($link, "utf8mb4");
+
+$countryObj = new Countries;
+$countryObj->dbresource = $link;
+$array = $countryObj->getAllCodesNames('zh-tw'); # Chinese traditional
 
 echo '<select>';
-
-$sql = "SELECT * FROM `countries` ORDER BY `country_".$lang."` ASC";
-$result = $mysqli->query($sql);
-while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-  if (!in_array($row['code'], array('yu','eu','ap','nt','aq','01'))) {
-    echo '<option value="'.$row['code'].'"';
-    if ($country === $row['code']) echo ' SELECTED';
-    echo '>'.$row['country_'.$lang].'</option>';
-  }
+foreach ($array as $val) {
+  echo '<option value="'.$val['code'].'">'.$val['name'].'</option>';
 }
 echo '</select>';
 ```
@@ -60,48 +54,44 @@ echo '</select>';
 **Translate country name:**
 
 ```php
-<?php
+use peterkahl\Countries\Countries;
 
-$lang = 'zh-hk';
-$country = 'de';
+$link = mysqli_connect($DB_HOSTNAME, $DB_USERNAME, $DB_PASSWORD, $DB_DBNAME);
 
-$sql = "SELECT * FROM `countries` WHERE `code`='".$country."' LIMIT 0,1";
-$result = $mysqli->query($sql);
-while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-  $name = $row['country_'.$lang];
-}
+mysqli_set_charset($link, "utf8mb4");
 
-echo $name; # 德國
+$countryObj = new Countries;
+$countryObj->dbresource = $link;
+
+echo $countryObj->code2countryName('US', 'ru'); # Соединенные Штаты
 ```
 
-**Get language code(s):**
+**Get all information for a given country (and name in specified language):**
 
 ```php
-<?php
+use peterkahl\Countries\Countries;
 
-$country = 'gb';
+$link = mysqli_connect($DB_HOSTNAME, $DB_USERNAME, $DB_PASSWORD, $DB_DBNAME);
 
-$sql = "SELECT * FROM `countries` WHERE `code`='".$country."' LIMIT 0,1";
-$result = $mysqli->query($sql);
-while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-  $lang = $row['locale'];
-}
+mysqli_set_charset($link, "utf8mb4");
 
-echo $lang; # en_GB,ga_GB,cy_GB,gd_GB,kw_GB
-```
+$countryObj = new Countries;
+$countryObj->dbresource = $link;
 
-**Get emoji flag:**
-
-```php
-<?php
-
-$country = 'gb';
-
-$sql = "SELECT * FROM `countries` WHERE `code`='".$country."' LIMIT 0,1";
-$result = $mysqli->query($sql);
-while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-  $flag = $row['flag'];
-}
-
-echo $flag; # 🇬🇧
+$array = $countryObj->getCountryInfo('fr', 'ar_SA');
+/*
+Array
+(
+    [code] => fr
+    [flag] => 🇫🇷
+    [country_iso] => France
+    [latitude] => 46
+    [longitude] => 2
+    [elevation] => 375
+    [continent] => EU
+    [locale] => fr_FR
+    [dialcode] => 33
+    [name] => فرنسا
+)
+*/
 ```
