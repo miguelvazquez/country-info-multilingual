@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Converts country code to full name in many languages and can provide lots of other useful information.",
     "keywords": ["i18n", "multilingual", "multilingual-websites", "geoip", "country"],
-    "homepage": "https://github.com/peterkahl/countries",
+    "homepage": "https://github.com/peterkahl/country-info-multilingual",
     "license": "Apache License Version 2.0",
     "authors": [
         {
