@@ -45,12 +45,8 @@ $country = 'cn';
 
 echo '<select>';
 
-if ($lang == 'zh-tw') {
-  $lang = 'zh-hk';
-}
-
 $sql = "SELECT * FROM `countries` ORDER BY `country_".$lang."` ASC";
-$result = mysqli->query($sql);
+$result = $mysqli->query($sql);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
   if (!in_array($row['code'], array('yu','eu','ap','nt','aq','01'))) {
     echo '<option value="'.$row['code'].'"';
@@ -70,11 +66,8 @@ $lang = 'zh-hk';
 $country = 'de';
 
 $sql = "SELECT * FROM `countries` WHERE `code`='".$country."' LIMIT 0,1";
-$result = mysqli->query($sql);
+$result = $mysqli->query($sql);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-  if ($lang == 'zh-tw') {
-    $lang = 'zh-hk';
-  }
   $name = $row['country_'.$lang];
 }
 
@@ -89,7 +82,7 @@ echo $name; # 德國
 $country = 'gb';
 
 $sql = "SELECT * FROM `countries` WHERE `code`='".$country."' LIMIT 0,1";
-$result = mysqli->query($sql);
+$result = $mysqli->query($sql);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
   $lang = $row['locale'];
 }
@@ -105,7 +98,7 @@ echo $lang; # en_GB,ga_GB,cy_GB,gd_GB,kw_GB
 $country = 'gb';
 
 $sql = "SELECT * FROM `countries` WHERE `code`='".$country."' LIMIT 0,1";
-$result = mysqli->query($sql);
+$result = $mysqli->query($sql);
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
   $flag = $row['flag'];
 }
