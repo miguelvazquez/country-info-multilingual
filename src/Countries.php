@@ -5,7 +5,7 @@
  * Converts country code to full name in many languages and can
  * provide lots of other useful information.
  *
- * @version    1.2.1 (2017-05-03 23:30:00 GMT)
+ * @version    1.3 (2017-05-04 10:31:00 GMT)
  * @author     Peter Kahl <peter.kahl@colossalmind.com>
  * @since      2017
  * @license    Apache License, Version 2.0
@@ -58,7 +58,7 @@ class Countries {
     if ($lang == 'zh-tw' || $lang == 'zh-mo') {
       $lang = 'zh-hk';
     }
-    if ($lang == 'zh-sg' || $lang == 'zh') {
+    elseif ($lang == 'zh-sg' || $lang == 'zh') {
       $lang = 'zh-cn';
     }
     if (in_array($lang, $available)) {
