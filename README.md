@@ -1,15 +1,17 @@
 # Country Info (Multilingual)
 
-Converts country code to full name and can provide lots of other useful information. Can be used to generate HTML code.
+Converts country code to full name in any of 16 languages and provides other useful information. Can be used to generate HTML code.
 
 Available data:
 * country names in 16 languages and scripts
 * emoji flags
 * locale (language code)
 * corresponding continent code
-* approximate geolocation (latitude, longitude)
-* approximate elevation (altitude in metres)
+* latitude and longitude of each country's centroid
+* mean elevation (altitude) in metres
 * international calling code
+* total population
+* area in km²
 
 Available languages:
 * Arabic (عربى)
@@ -17,13 +19,13 @@ Available languages:
 * German (Deutsch)
 * Danish (dansk)
 * English
-* Spanish (Español)
+* Spanish (español)
 * French (français)
 * Hebrew (עִברִית)
 * Italian (italiano)
 * Japanese (日本語)
 * Dutch (Nederlands)
-* Portuguese (Português)
+* Portuguese (português)
 * Russian (русский)
 * Slovak (slovenčina)
 * Chinese simplified (中文简体)
@@ -66,7 +68,7 @@ $countryObj->dbresource = $link;
 echo $countryObj->code2countryName('US', 'ru'); # Соединенные Штаты
 ```
 
-**Get all information for a given country (and name in specified language):**
+**Get all information for a given country:**
 
 ```php
 use peterkahl\Countries\Countries;
@@ -78,20 +80,64 @@ mysqli_set_charset($link, "utf8mb4");
 $countryObj = new Countries;
 $countryObj->dbresource = $link;
 
-$array = $countryObj->getCountryInfo('fr', 'ar_SA');
+$array = $countryObj->getCountryInfo('fr');
+var_dump($array);
 /*
-Array
-(
-    [code] => fr
-    [flag] => 🇫🇷
-    [country_iso] => France
-    [latitude] => 46
-    [longitude] => 2
-    [elevation] => 375
-    [continent] => EU
-    [locale] => fr_FR
-    [dialcode] => 33
-    [name] => فرنسا
-)
+array(27) {
+  ["code"]=>
+  string(2) "fr"
+  ["flag"]=>
+  string(8) "🇫🇷"
+  ["longname"]=>
+  string(6) "France"
+  ["ar"]=>
+  string(10) "فرنسا"
+  ["cs"]=>
+  string(7) "Francie"
+  ["da"]=>
+  string(6) "France"
+  ["de"]=>
+  string(10) "Frankreich"
+  ["en"]=>
+  string(6) "France"
+  ["es"]=>
+  string(7) "Francia"
+  ["fr"]=>
+  string(6) "France"
+  ["he"]=>
+  string(14) "צָרְפַת"
+  ["it"]=>
+  string(7) "Francia"
+  ["ja"]=>
+  string(12) "フランス"
+  ["nl"]=>
+  string(9) "Frankrijk"
+  ["pt"]=>
+  string(7) "França"
+  ["ru"]=>
+  string(14) "Франция"
+  ["sk"]=>
+  string(11) "Francúzsko"
+  ["zh-cn"]=>
+  string(6) "法国"
+  ["zh-hk"]=>
+  string(6) "法國"
+  ["latitude"]=>
+  string(8) "46.53078"
+  ["longitude"]=>
+  string(8) "2.715019"
+  ["elevation"]=>
+  string(3) "375"
+  ["continent"]=>
+  string(2) "EU"
+  ["locale"]=>
+  string(5) "fr_FR"
+  ["dialcode"]=>
+  string(2) "33"
+  ["area"]=>
+  string(6) "550788"
+  ["population"]=>
+  string(8) "56700000"
+}
 */
 ```

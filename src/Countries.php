@@ -5,7 +5,7 @@
  * Converts country code to full name in many languages and can
  * provide lots of other useful information.
  *
- * @version    1.3 (2017-05-04 10:31:00 GMT)
+ * @version    2.0 (2017-06-15 03:46:00 GMT)
  * @author     Peter Kahl <peter.kahl@colossalmind.com>
  * @since      2017
  * @license    Apache License, Version 2.0
@@ -90,14 +90,14 @@ class Countries {
    */
   public function code2countryName($code, $lang = 'en') {
     $lang = $this->ValidateLanguage($lang);
-    $sql = "SELECT `country_".mysqli_real_escape_string($this->dbresource, $lang)."` FROM `countries` WHERE `code`='".mysqli_real_escape_string($this->dbresource, strtolower($code))."';";
+    $sql = "SELECT `".mysqli_real_escape_string($this->dbresource, $lang)."` FROM `countries` WHERE `code`='".mysqli_real_escape_string($this->dbresource, strtolower($code))."';";
     $result = mysqli_query($this->dbresource, $sql);
     if ($result === false) {
       throw new Exception('Error executing SQL query');
     }
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
       mysqli_free_result($result);
-      return $row['country_'.$lang];
+      return $row[$lang];
     }
     throw new Exception('Invalid argument code');
   }
@@ -114,15 +114,15 @@ class Countries {
   public function getAllCodesNames($lang = 'en') {
     $lang = $this->ValidateLanguage($lang);
     $new = array();
-    $sql = "SELECT `code`,`country_".mysqli_real_escape_string($this->dbresource, $lang)."` FROM `countries` ORDER BY `country_".mysqli_real_escape_string($this->dbresource, $lang)."` ASC;";
+    $sql = "SELECT `code`,`".mysqli_real_escape_string($this->dbresource, $lang)."` FROM `countries` ORDER BY `".mysqli_real_escape_string($this->dbresource, $lang)."` ASC;";
     $result = mysqli_query($this->dbresource, $sql);
     if ($result === false) {
       throw new Exception('Error executing SQL query');
     }
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-      # We ignore these codes that aren't real countries
-      if (!in_array($row['code'], array('yu','eu','ap','nt','aq','01'))) {
-        $new[] = array('code' => $row['code'], 'name' => $row['country_'.$lang]);
+      # We ignore the codes that aren't real countries
+      if (!in_array($row['code'], array('eu','ap','nt','aq','01'))) {
+        $new[] = array('code' => $row['code'], 'name' => $row[$lang]);
       }
     }
     mysqli_free_result($result);
@@ -134,11 +134,9 @@ class Countries {
 
   /**
    * Fetches the whole row of data for given country (code).
-   * Name of country is returned only in specified language.
    * @return array
    */
-  public function getCountryInfo($code, $lang = 'en') {
-    $lang = $this->ValidateLanguage($lang);
+  public function getCountryInfo($code) {
     $sql = "SELECT * FROM `countries` WHERE `code`='".mysqli_real_escape_string($this->dbresource, strtolower($code))."';";
     $result = mysqli_query($this->dbresource, $sql);
     if ($result === false) {
@@ -146,12 +144,6 @@ class Countries {
     }
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
       mysqli_free_result($result);
-      $row['name'] = $row['country_'.$lang];
-      foreach ($row as $key => $val) {
-        if (substr($key, 0, 8) == 'country_' && $key != 'country_iso') {
-          unset($row[$key]);
-        }
-      }
       return $row;
     }
     throw new Exception('Invalid argument code');
