@@ -1,6 +1,6 @@
 --
 -- Countries
--- Version Date: 2017-07-22
+-- Version Date: 2017-07-22 03:19:00 GMT
 --
 -- Copyright 2012-2017 Peter Kahl <peter.kahl@colossalmind.com>
 --
@@ -304,7 +304,8 @@ INSERT INTO `countries` (`code`, `flag`, `longname`, `ar`, `cs`, `da`, `de`, `en
 ('im', '🇮🇲', 'Isle of Man', 'جزيرة مان', 'Isle of Man', 'Isle of Man', 'Isle of Man', 'Isle of Man', 'Isla de Man', 'Isle of Man', 'האי מאן', 'Isle of Man', 'マン島', 'Isle of Man', 'Ilha de Man', 'Остров Мэн', 'Isle of Man', '马恩岛', '馬恩島', 54.224367, -4.527622, 121, 'EU', 'en_GB', '44', 572, 84497),
 ('je', '🇯🇪', 'Jersey, Bailiwick of', 'جيرسي', 'Jersey', 'Jersey', 'Jersey', 'Jersey', 'Jersey', 'Jersey', 'ג\'רזי', 'Jersey', 'ジャージー', 'Jersey', 'Jersey', 'Джерси', 'Jersey', '泽西岛', '澤西島', 49.20577, -2.12303, 35, 'EU', 'en_JE', '44', 118.2, 100080),
 ('gg', '🇬🇬', 'Guernsey', 'جيرنسي', 'Guernsey', 'Guernsey', 'Guernsey', 'Guernsey', 'Guernsey', 'Guernsey', 'גרנזי', 'Guernsey', 'ガーンジー島', 'Guernsey', 'Guernsey', 'Guernsey', 'Guernsey', '根西岛', '根西島', 49.45205, -2.58203, 49, 'EU', 'en_GG', '44', 65, 63026),
-('bl', '🇧🇱', 'Saint-Barthélemy, Collectivity of', 'سانت بارتيليمي', 'Svatý Bartoloměj', 'Saint Barthélemy', 'Saint Barthélemy', 'Saint Barthélemy', 'Saint Barthélemy', 'Saint Barthélemy', 'סנט ברתלמי', 'San Bartolomeo', '聖バセレミー', 'Saint Barthélemy', 'São Bartolomé', 'Сен-Бартельми', 'Svätý Bartolomej', '圣巴泰勒米', '聖巴泰勒米', 17.9, -62.833333, 13, 'SA', 'fr_BL', '590', 25, 9279);
+('bl', '🇧🇱', 'Saint-Barthélemy, Collectivity of', 'سانت بارتيليمي', 'Svatý Bartoloměj', 'Saint Barthélemy', 'Saint Barthélemy', 'Saint Barthélemy', 'Saint Barthélemy', 'Saint Barthélemy', 'סנט ברתלמי', 'San Bartolomeo', '聖バセレミー', 'Saint Barthélemy', 'São Bartolomé', 'Сен-Бартельми', 'Svätý Bartolomej', '圣巴泰勒米', '聖巴泰勒米', 17.9, -62.833333, 13, 'SA', 'fr_BL', '590', 25, 9279),
+('ss', '🇸🇸', 'South Sudan, Republic of', 'جنوب السودان', 'jižní Súdán', 'South Sudan', 'South Sudan', 'South Sudan', 'South Sudan', 'South Sudan', 'דרום סודן', 'South Sudan', '南スーダン', 'South Sudan', 'South Sudan', 'South Sudan', 'Južný Sudán', '南苏丹', '南蘇丹', 6.8769919, 31.3069788, 471, 'AF', 'en_SS', '211', 619745, 12340000);
 
 --
 -- Indexes for dumped tables
