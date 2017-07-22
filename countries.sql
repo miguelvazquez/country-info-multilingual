@@ -1,6 +1,6 @@
 --
 -- Countries
--- Version Date: 2017-06-15
+-- Version Date: 2017-07-22
 --
 -- Copyright 2012-2017 Peter Kahl <peter.kahl@colossalmind.com>
 --
@@ -46,6 +46,10 @@ CREATE TABLE `countries` (
   `area` float NOT NULL,
   `population` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `countries`
+--
 
 INSERT INTO `countries` (`code`, `flag`, `longname`, `ar`, `cs`, `da`, `de`, `en`, `es`, `fr`, `he`, `it`, `ja`, `nl`, `pt`, `ru`, `sk`, `zh-cn`, `zh-hk`, `latitude`, `longitude`, `elevation`, `continent`, `locale`, `dialcode`, `area`, `population`) VALUES
 ('ad', '🇦🇩', 'Andorra, Principality of', 'أندورا', 'Andorra', 'Andorra', 'Andorra', 'Andorra', 'Andorra', 'Andorre', 'אנדורה', 'Andorra', 'アンドラ', 'Andorra', 'Andorra', 'Андорра', 'Andorra', '安道尔', '安道爾', 42.3, 1.3, 1996, 'EU', 'ca_AD', '376', 468, 85470),
@@ -237,7 +241,7 @@ INSERT INTO `countries` (`code`, `flag`, `longname`, `ar`, `cs`, `da`, `de`, `en
 ('sd', '🇸🇩', 'Sudan', 'السودان', 'Súdán', 'Sudan', 'Sudan', 'Sudan', 'Sudán', 'Soudan', 'סודאן', 'Sudan', 'スーダン', 'Soedan', 'Sudão', 'Судан', 'Sudán', '苏丹', '蘇丹', 13.76948, 30.21578, 568, 'AF', 'ar_SD,en_SD', '249', 2507270, 26800000),
 ('se', '🇸🇪', 'Sweden', 'السويد', 'Švédsko', 'Sverige', 'Schweden', 'Sweden', 'Suecia', 'Suède', 'שוודיה', 'Svezia', 'スウェーデン', 'Zweden', 'Suécia', 'Швеция', 'Švédsko', '瑞典', '瑞典', 62.74554, 16.85663, 320, 'EU', 'sv_SE', '46', 433619, 8038123),
 ('sg', '🇸🇬', 'Singapore, Republic of', 'سنغافورة', 'Singapur', 'Singapore', 'Singapur', 'Singapore', 'Singapur', 'Singapour', 'סינגפור', 'Singapore', 'シンガポール', 'Singapore', 'Singapura', 'Сингапур', 'Singapur', '新加坡', '新加坡', 1.22, 103.48, 28, 'AS', 'en_SG,ms_SG,zh_SG,ta_SG', '65', 719.1, 5607300),
-('sh', '🇸🇭', 'Saint Helena', 'سانت هيلنا', 'Svatá Helena', 'Sankt Helena', 'St. Helena', 'St. Helena', 'Santa Elena', 'Sainte-Hélène', 'סנט הלנה', 'Sant’Elena', 'セントヘレナ', 'Sint-Helena', 'Santa Helena', 'Остров Святой Елены', 'Svätá Helena', '圣赫勒拿岛', '聖赫勒拿島', -15.56, -5.42, 46, 'AF', 'en_SH', '290', 121, 4534),
+('sh', '🇸🇭', 'Saint Helena, Ascension and Tristan da Cunha', 'سانت هيلنا', 'Svatá Helena', 'Sankt Helena', 'St. Helena', 'St. Helena', 'Santa Elena', 'Sainte-Hélène', 'סנט הלנה', 'Sant’Elena', 'セントヘレナ', 'Sint-Helena', 'Santa Helena', 'Остров Святой Елены', 'Svätá Helena', '圣赫勒拿岛', '聖赫勒拿島', -15.56, -5.42, 46, 'AF', 'en_SH', '290', 121, 4534),
 ('si', '🇸🇮', 'Slovenia', 'سلوفينيا', 'Slovinsko', 'Slovenien', 'Slowenien', 'Slovenia', 'Eslovenia', 'Slovénie', 'סלובניה', 'Slovenia', 'スロベニア', 'Slovenië', 'Eslovénia', 'Словения', 'Slovinsko', '斯洛文尼亚', '斯洛文尼亞', 46.1279, 15.01091, 493, 'EU', 'sl_SI', '386', 20440.8, 2111084),
 ('sj', '🇸🇯', 'Svalbard and Jan Mayen Islands', 'سفالبارد وجان مايان', 'Svalbard a Jan Mayen', 'Jan Mayen', 'Svalbard und Jan Mayen', 'Svalbard and Jan Mayen Islands', 'Svalbard y Jan Mayen', 'Svalbard et Île Jan Mayen', 'סבאלברד ויאן מאיין', 'Svalbard e Jan Mayen', 'スバールバル諸島・ヤンマイエン島', 'Svalbard en Jan Mayen', 'Esvalbarda e Jan Mayen', 'Свальбард и Ян-Майен', 'Svalbard a Jan Mayen', '斯瓦尔巴群岛和扬马延岛', '斯瓦爾巴群島和揚馬延島', 78, 20, 154, 'EU', 'no_SJ', '47', 61022, 2572),
 ('sk', '🇸🇰', 'Slovakia', 'سلوفاكيا', 'Slovensko', 'Slovakiet', 'Slowakei', 'Slovakia', 'Eslovaquia', 'Slovaquie', 'סלובקיה', 'Slovacchia', 'スロバキア', 'Slowakije', 'Eslováquia', 'Словакия', 'Slovensko', '斯洛伐克', '斯洛伐克', 48.78538, 19.75068, 459, 'EU', 'sk_SK', '421', 47843.8, 5153558),
@@ -287,11 +291,11 @@ INSERT INTO `countries` (`code`, `flag`, `longname`, `ar`, `cs`, `da`, `de`, `en
 ('zm', '🇿🇲', 'Zambia', 'زامبيا', 'Zambie', 'Zambia', 'Sambia', 'Zambia', 'Zambia', 'Zambie', 'זמביה', 'Zambia', 'ザンビア', 'Zambia', 'Zâmbia', 'Замбия', 'Zambia', '赞比亚', '贊比亞', -13.49506, 27.95338, 1138, 'AF', 'en_ZM', '260', 760305, 8052451),
 ('cd', '🇨🇩', 'Congo, Democratic Republic of the', 'جمهورية الكونغو الديمقراطية', 'Demokratická republika Kongo', 'Den Demokratiske Republik Congo', 'Demokratische Republik Kongo', 'DR Congo', 'República Democrática del Congo', 'République démocratique du Congo', 'הרפובליקה הדמוקרטית של קונגו', 'Repubblica Democratica del Congo', 'コンゴ民主共和国 (キンシャサ)', 'Democratische Republiek van Congo', 'República Democrática do Congo', 'Демократическая Республика Конго', 'Konžská demokratická republika', '刚果民主共和国', '剛果民主共和國', -2.920276, 23.7722, 726, 'AF', 'fr_CD', '243', 2346330, 45200000),
 ('zw', '🇿🇼', 'Zimbabwe', 'زيمبابوي', 'Zimbabwe', 'Zimbabwe', 'Simbabwe', 'Zimbabwe', 'Zimbabue', 'Zimbabwe', 'זימבאבווה', 'Zimbabwe', 'ジンバブエ', 'Zimbabwe', 'Zimbabwe', 'Зимбабве', 'Zimbabwe', '津巴布韦', '津巴布韋', -19.05584, 30.06353, 962, 'AF', 'en_ZW,sn_ZW,nd_ZW', '263', 394272, 10800000),
-('ap', '🏴', '', 'المحيط الآسيوي', 'Asie a Tichomoří', 'Asien Stillehavet', 'Asien-Pazifik', 'Asia-Pacific', 'Asia y el Pacífico', 'Asie-Pacifique', 'אסיה פסיפיק', 'Asia-Pacifico', 'アジア太平洋', 'Asia-Pacific', 'Ásia-Pacífico', 'Азиатско-Тихоокеанский', 'Ázije a Tichomorie', '亚太', '亞太', -2.81, 128.5, 100, 'AS', 'en_GB', '', 0, 0),
+('ap', '🏴', 'Asia-Pacific', 'المحيط الآسيوي', 'Asie a Tichomoří', 'Asien Stillehavet', 'Asien-Pazifik', 'Asia-Pacific', 'Asia y el Pacífico', 'Asie-Pacifique', 'אסיה פסיפיק', 'Asia-Pacifico', 'アジア太平洋', 'Asia-Pacific', 'Ásia-Pacífico', 'Азиатско-Тихоокеанский', 'Ázije a Tichomorie', '亚太', '亞太', -2.81, 128.5, 100, 'AS', 'en_GB', '', 0, 0),
 ('rs', '🇷🇸', 'Serbia, Republic of', 'صربيا', 'Srbsko', 'Serbien', 'Serbien', 'Serbia', 'Serbia', 'Serbie', 'סרביה', 'Serbia', 'セルビア', 'Servië', 'Sérvia', 'Сербия', 'Srbsko', '塞尔维亚', '塞爾維亞', 44.04673, 20.98854, 442, 'EU', 'sr_RS', '381', 88010.5, 9833260),
 ('ax', '🇦🇽', 'Åland Islands', 'جزر آلاند', 'Alandy', 'Åland', 'Alandinseln', 'Åland Islands', 'Islas Åland', 'Îles Åland', 'אולנד', 'Isole Aland', 'オーランド諸島', 'Alandeilanden', 'Ilhas Alanda', 'Аландские острова', 'Alandské ostrovy', '奥兰群岛', '奧蘭群島', 60.21, 20.16, 40, 'EU', 'sv_AX', '358', 1580, 29013),
 ('eu', '🇪🇺', 'European Union', 'الإتحاد الأوربي', 'Evropská unie', 'europæiske Union', 'Europäische Union', 'European Union', 'Unión Europea', 'Union européenne', 'האיחוד האירופאי', 'Unione europea', '欧州連合', 'Europeese Unie', 'União Européia', 'Европейский Союз', 'Európska únia', '欧洲联盟', '歐洲聯盟', 50, 15, 249, 'EU', 'en_GB', '', 4475760, 510056011),
-('01', '🏁', '', 'الشخصية', 'soukromá', 'privat', 'privat', 'private', 'privada', 'privé', 'פְּרָטִי', 'privato', 'プライベート', 'privaat', 'privada', 'личный', 'súkromná', '私有', '私有', 0, 0, 249, '', 'en_GB', '', 0, 0),
+('01', '🏁', 'private', 'الشخصية', 'soukromá', 'privat', 'privat', 'private', 'privada', 'privé', 'פְּרָטִי', 'privato', 'プライベート', 'privaat', 'privada', 'личный', 'súkromná', '私有', '私有', 0, 0, 0, '', 'en_GB', '', 0, 0),
 ('ps', '🇵🇸', 'Palestine, State of', 'فلسطين', 'Palestina', 'Palæstina', 'Palästina', 'Palestine', 'Palestina', 'Palestine', 'פלסטין', 'Palestina', 'パレスチナ', 'Palestina', 'Palestina', 'Палестина', 'Palestína', '巴勒斯坦', '巴勒斯坦', 31.89, 34.9, 775, 'AS', 'ar_PS,he_PS', '970', 6220, 4550368),
 ('me', '🇲🇪', 'Montenegro', 'الجبل الأسود', 'Černá Hora', 'Montenegro', 'Montenegro', 'Montenegro', 'Montenegro', 'Monténégro', 'מונטנגרו', 'Montenegro', 'モンテネグロ', 'Montenegro', 'Montenegro', 'Черногория', 'Čierna Hora', '黑山', '黑山', 42.78899, 19.45217, 1087, 'EU', 'srp_ME,sq_ME,bs_ME,hr_ME,sr_ME', '382', 13995.8, 652565),
 ('cw', '🇨🇼', 'Curaçao', 'كوراساو', 'Curaçao', 'Curaçao', 'Curaçao', 'Curaçao', 'Curaçao', 'Curaçao', 'קוראסאו', 'Curaçao', 'キュラソー', 'Curaçao', 'Curaçao', 'Кюрасао', 'Curaçao', '库拉索', '庫拉索', 12.164897, -68.961985, 36, 'SA', 'nl_CW', '599', 444, 158986),
@@ -299,9 +303,16 @@ INSERT INTO `countries` (`code`, `flag`, `longname`, `ar`, `cs`, `da`, `de`, `en
 ('bq', '🇧🇶', 'Caribbean Netherlands', 'الجزر الكاريبية الهولندية', 'Karibské Holandsko', 'Caribbean Netherlands', 'Karibische Niederlande', 'Caribbean Netherlands', 'Caribe Países Bajos', 'Caraïbes Pays-Bas', 'הולנד הקריבי', 'Caraibi Olandesi', 'カリブ海オランダ', 'Caribisch Nederland', 'Caribe Holanda', 'Карибские Нидерланды', 'Karibské Holandsko', '加勒比荷兰', '加勒比荷蘭', 12.18, -68.25, 11, 'SA', 'nl_NL,en_NL', '599', 328, 21133),
 ('im', '🇮🇲', 'Isle of Man', 'جزيرة مان', 'Isle of Man', 'Isle of Man', 'Isle of Man', 'Isle of Man', 'Isla de Man', 'Isle of Man', 'האי מאן', 'Isle of Man', 'マン島', 'Isle of Man', 'Ilha de Man', 'Остров Мэн', 'Isle of Man', '马恩岛', '馬恩島', 54.224367, -4.527622, 121, 'EU', 'en_GB', '44', 572, 84497),
 ('je', '🇯🇪', 'Jersey, Bailiwick of', 'جيرسي', 'Jersey', 'Jersey', 'Jersey', 'Jersey', 'Jersey', 'Jersey', 'ג\'רזי', 'Jersey', 'ジャージー', 'Jersey', 'Jersey', 'Джерси', 'Jersey', '泽西岛', '澤西島', 49.20577, -2.12303, 35, 'EU', 'en_JE', '44', 118.2, 100080),
-('gg', '🇬🇬', 'Guernsey', 'جيرنسي', 'Guernsey', 'Guernsey', 'Guernsey', 'Guernsey', 'Guernsey', 'Guernsey', 'גרנזי', 'Guernsey', 'ガーンジー島', 'Guernsey', 'Guernsey', 'Guernsey', 'Guernsey', '根西岛', '根西島', 49.45205, -2.58203, 49, 'EU', 'en_GG', '44', 65, 63026);
+('gg', '🇬🇬', 'Guernsey', 'جيرنسي', 'Guernsey', 'Guernsey', 'Guernsey', 'Guernsey', 'Guernsey', 'Guernsey', 'גרנזי', 'Guernsey', 'ガーンジー島', 'Guernsey', 'Guernsey', 'Guernsey', 'Guernsey', '根西岛', '根西島', 49.45205, -2.58203, 49, 'EU', 'en_GG', '44', 65, 63026),
+('bl', '🇧🇱', 'Saint-Barthélemy, Collectivity of', 'سانت بارتيليمي', 'Svatý Bartoloměj', 'Saint Barthélemy', 'Saint Barthélemy', 'Saint Barthélemy', 'Saint Barthélemy', 'Saint Barthélemy', 'סנט ברתלמי', 'San Bartolomeo', '聖バセレミー', 'Saint Barthélemy', 'São Bartolomé', 'Сен-Бартельми', 'Svätý Bartolomej', '圣巴泰勒米', '聖巴泰勒米', 17.9, -62.833333, 13, 'SA', 'fr_BL', '590', 25, 9279);
 
+--
+-- Indexes for dumped tables
+--
 
+--
+-- Indexes for table `countries`
+--
 ALTER TABLE `countries`
   ADD PRIMARY KEY (`code`),
   ADD UNIQUE KEY `code_2` (`code`),

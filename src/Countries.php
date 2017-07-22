@@ -5,7 +5,7 @@
  * Converts country code to full name in many languages and can
  * provide lots of other useful information.
  *
- * @version    2.0 (2017-06-15 03:46:00 GMT)
+ * @version    2.1 (2017-07-22 00:33:00 GMT)
  * @author     Peter Kahl <peter.kahl@colossalmind.com>
  * @since      2017
  * @license    Apache License, Version 2.0
@@ -89,6 +89,9 @@ class Countries {
    * @return string
    */
   public function code2countryName($code, $lang = 'en') {
+    if (empty($code)) {
+      return '';
+    }
     $lang = $this->ValidateLanguage($lang);
     $sql = "SELECT `".mysqli_real_escape_string($this->dbresource, $lang)."` FROM `countries` WHERE `code`='".mysqli_real_escape_string($this->dbresource, strtolower($code))."';";
     $result = mysqli_query($this->dbresource, $sql);
@@ -150,5 +153,4 @@ class Countries {
   }
 
   #===================================================================
-
 }
