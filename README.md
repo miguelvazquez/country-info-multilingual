@@ -8,10 +8,12 @@ Available data:
 * locale (language code)
 * corresponding continent code
 * latitude and longitude of each country's centroid
-* mean elevation (altitude) in metres
+* elevation (altitude) in metres
 * international calling code
 * total population
 * area in km²
+* currency code
+* Google Maps API `place_id`
 
 Available languages:
 * Arabic (عربى)
@@ -80,64 +82,68 @@ mysqli_set_charset($link, "utf8mb4");
 $countryObj = new Countries;
 $countryObj->dbresource = $link;
 
-$array = $countryObj->getCountryInfo('fr');
+$array = $countryObj->getCountryInfo('VC');
 var_dump($array);
 /*
-array(27) {
+array(29) {
   ["code"]=>
-  string(2) "fr"
+  string(2) "VC"
+  ["cur_code"]=>
+  string(3) "XCD"
   ["flag"]=>
-  string(8) "🇫🇷"
+  string(8) "🇻🇨"
   ["longname"]=>
-  string(6) "France"
-  ["ar"]=>
-  string(10) "فرنسا"
-  ["cs"]=>
-  string(7) "Francie"
-  ["da"]=>
-  string(6) "France"
-  ["de"]=>
-  string(10) "Frankreich"
-  ["en"]=>
-  string(6) "France"
-  ["es"]=>
-  string(7) "Francia"
-  ["fr"]=>
-  string(6) "France"
-  ["he"]=>
-  string(14) "צָרְפַת"
-  ["it"]=>
-  string(7) "Francia"
-  ["ja"]=>
-  string(12) "フランス"
-  ["nl"]=>
-  string(9) "Frankrijk"
-  ["pt"]=>
-  string(7) "França"
-  ["ru"]=>
-  string(14) "Франция"
-  ["sk"]=>
-  string(11) "Francúzsko"
-  ["zh-cn"]=>
-  string(6) "法国"
-  ["zh-hk"]=>
-  string(6) "法國"
+  string(32) "Saint Vincent and the Grenadines"
+  ["name_ar"]=>
+  string(36) "سانت فنسنت وغرنادين"
+  ["name_cs"]=>
+  string(26) "Svatý Vincent a Grenadiny"
+  ["name_da"]=>
+  string(29) "Saint Vincent og Grenadinerne"
+  ["name_de"]=>
+  string(30) "St. Vincent und die Grenadinen"
+  ["name_en"]=>
+  string(32) "Saint Vincent and the Grenadines"
+  ["name_es"]=>
+  string(28) "San Vicente y las Granadinas"
+  ["name_fr"]=>
+  string(31) "Saint-Vincent-et-les Grenadines"
+  ["name_he"]=>
+  string(40) "סנט וינסנט והגרנדינים"
+  ["name_it"]=>
+  string(26) "Saint Vincent e Grenadines"
+  ["name_ja"]=>
+  string(54) "セントビンセント・グレナディーン諸島"
+  ["name_nl"]=>
+  string(30) "Saint Vincent en de Grenadines"
+  ["name_pt"]=>
+  string(25) "São Vicente e Granadinas"
+  ["name_ru"]=>
+  string(45) "Сент-Винсент и Гренадины"
+  ["name_sk"]=>
+  string(28) "Svätý Vincent a Grenadíny"
+  ["name_zh-cn"]=>
+  string(30) "圣文森特和格林纳丁斯"
+  ["name_zh-hk"]=>
+  string(30) "聖文森特和格林納丁斯"
   ["latitude"]=>
-  string(8) "46.53078"
+  string(10) "13.2528179"
   ["longitude"]=>
-  string(8) "2.715019"
+  string(11) "-61.1970774"
   ["elevation"]=>
-  string(3) "375"
+  string(7) "624.517"
   ["continent"]=>
-  string(2) "EU"
+  string(2) "NA"
   ["locale"]=>
-  string(5) "fr_FR"
+  string(5) "en_VC"
   ["dialcode"]=>
-  string(2) "33"
+  string(4) "1784"
   ["area"]=>
-  string(6) "550788"
+  string(3) "389"
   ["population"]=>
-  string(8) "56700000"
+  string(6) "103000"
+  ["place_id"]=>
+  string(27) "ChIJuzU5nuKsQIwRsaHSjejT_TE"
 }
 */
 ```
